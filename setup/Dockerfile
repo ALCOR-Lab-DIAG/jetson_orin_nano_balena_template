@@ -57,6 +57,6 @@ RUN curl -fsSL https://code-server.dev/install.sh | sh
 EXPOSE 8000
 
 WORKDIR /app
-COPY src /app
+COPY . /app
 
 CMD ["code-server","--bind-addr","0.0.0.0:8000"]
