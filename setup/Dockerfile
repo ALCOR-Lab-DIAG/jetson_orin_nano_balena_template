@@ -1,4 +1,4 @@
-FROM ubuntu:noble
+FROM nvcr.io/nvidia/pytorch:25.11-py3-igpu
 
 RUN apt update && apt install -y --no-install-recommends \
   sudo \
@@ -47,6 +47,7 @@ RUN \
 RUN apt update && apt install -y python3 python3-venv python3-pip nvtop wget
 
 ENV LD_LIBRARY_PATH=/usr/lib/aarch64-linux-gnu/tegra
+
 COPY setup/postscript.sh /tmp/postscript.sh
 RUN chmod +x /tmp/postscript.sh
 RUN /tmp/postscript.sh
@@ -55,7 +56,7 @@ RUN curl -fsSL https://code-server.dev/install.sh | sh
 
 EXPOSE 8000
 
-COPY src /app
 WORKDIR /app
+COPY src /app
 
 CMD ["code-server","--bind-addr","0.0.0.0:8000"]

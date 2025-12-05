@@ -17,3 +17,7 @@ balena push [ip_address]
 ### HOW TO DEVELOP
 - Connect to `[IP_ADDRESS]:8000` with a browser to start programming and enter the password inserted in the `docker-compose.yaml` file
 - Put all your data in `\app`, otherwise they will be deleted on reboot
+
+### Warning
+The Jetson require special versions of torch and torchvision, so use the one installed at system level.
+Using a torch version installed by pip will not work
