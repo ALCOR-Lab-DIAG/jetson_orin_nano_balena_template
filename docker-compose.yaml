@@ -1,0 +1,9 @@
+version: '2.1'
+services:
+  app:
+    build: .
+    privileged: true
+    volumes:
+        - "data:/data"
+volumes:
+  data:
