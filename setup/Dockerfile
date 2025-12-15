@@ -58,4 +58,5 @@ RUN /tmp/postscript.sh
 WORKDIR /app
 COPY . /app
 
-CMD ["code","tunnel"]
+#CMD ["code", "--user-data-dir", "/code_config", "tunnel"]
+#CMD ["code", "--user-data-dir", "/code_config", "serve-web","--host","0.0.0.0","--without-connection-token"]
